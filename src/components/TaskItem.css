@@ -1,0 +1,254 @@
+.task-item {
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  width: 100%; /* Full width within its container */
+  max-width: 100%; /* Prevent the item from exceeding the width of its container */
+  overflow: hidden; /* Prevent any content from spilling out */
+  display: flex;
+  flex-direction: column; /* Ensure content is stacked properly */
+}
+
+.task-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-item h3 {
+  font-size: 20px;
+  color: #4a4e69;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Ensure text wraps and doesn't overflow */
+}
+
+.task-item p {
+  font-size: 14px;
+  color: #6c757d;
+  margin: 5px 0;
+  word-wrap: break-word; /* Ensure text wraps and doesn't overflow */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .task-item {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .task-item h3 {
+    font-size: 18px;
+  }
+
+  .task-item p {
+    font-size: 12px;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .actions button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+.task-item .actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: flex-end;
+}
+
+.task-item .edit-btn,
+.task-item .delete-btn,
+.task-item .save-btn,
+.task-item .cancel-btn {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Edit Button Styling */
+.task-item .edit-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+.task-item .edit-btn:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+.task-item .edit-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.5);
+}
+
+.task-item .edit-btn:active {
+  background-color: #e0a800;
+  transform: scale(0.98);
+}
+
+/* Delete Button Styling */
+.task-item .delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.task-item .delete-btn:hover {
+  background-color: #b02a37;
+  transform: scale(1.05);
+}
+
+.task-item .delete-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(220, 53, 69, 0.5);
+}
+
+.task-item .delete-btn:active {
+  background-color: #b02a37;
+  transform: scale(0.98);
+}
+
+/* Save Button Styling */
+.task-item .save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.task-item .save-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.task-item .save-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(40, 167, 69, 0.5);
+}
+
+.task-item .save-btn:active {
+  background-color: #218838;
+  transform: scale(0.98);
+}
+
+/* Cancel Button Styling */
+.task-item .cancel-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+.task-item .cancel-btn:hover {
+  background-color: #5a6268;
+  transform: scale(1.05);
+}
+
+.task-item .cancel-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.5);
+}
+
+.task-item .cancel-btn:active {
+  background-color: #5a6268;
+  transform: scale(0.98);
+}
+
+/* Mobile Responsiveness - When Edit Form is Open */
+@media (max-width: 480px) {
+  .task-item input,
+  .task-item textarea,
+  .task-item select {
+    width: 90%; /* Ensure inputs are responsive */
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+
+  .task-item .actions {
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .task-item .actions button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* General Input/Select/Textarea Styling */
+input,
+textarea,
+select {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  transition: border 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Textarea specific */
+textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+/* Button styling */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.save-btn {
+  background-color: #28a745;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  margin-left: 10px;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
+}
